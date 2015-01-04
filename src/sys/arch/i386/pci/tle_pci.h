@@ -1,5 +1,3 @@
-/*  $NetBSD: tle_pci.h,v 0.1 2014/05/29 00:13:00 tortoise Exp $ */
-
 /*
  * Copyright (c) 1995, 1996 Christopher G. Demetriou.  All rights reserved.
  * Copyright (c) 1994 Charles Hannum.  All rights reserved.
@@ -28,6 +26,8 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ *  $Id: tle_pci.h,v 0.1 2014/05/29 00:13:00 StupidTortoise Exp $ */
  */
 
 #ifndef _TLE_PCI_H_
