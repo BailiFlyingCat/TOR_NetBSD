@@ -176,6 +176,7 @@ int	ftruncate();
 int	__sysctl();
 int	mlock();
 int	munlock();
+int	hello();
 #ifdef LKM
 int	lkmnosys();
 int	lkmnosys();
@@ -520,7 +521,7 @@ struct sysent sysent[] = {
 	{ 6, __sysctl },			/* 202 = __sysctl */
 	{ 2, mlock },			/* 203 = mlock */
 	{ 2, munlock },			/* 204 = munlock */
-	{ 0, nosys },			/* 205 = nosys */
+	{ 3, hello },			/* 205 = hello */
 	{ 0, nosys },			/* 206 = nosys */
 	{ 0, nosys },			/* 207 = nosys */
 	{ 0, nosys },			/* 208 = nosys */

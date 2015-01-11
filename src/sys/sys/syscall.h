@@ -190,3 +190,4 @@
 #define	SYS___sysctl	202
 #define	SYS_mlock	203
 #define	SYS_munlock	204
+#define	SYS_hello	205

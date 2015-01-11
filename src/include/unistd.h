@@ -97,6 +97,7 @@ int	 tcsetpgrp __P((int, pid_t));
 char	*ttyname __P((int));
 int	 unlink __P((const char *));
 ssize_t	 write __P((int, const void *, size_t));
+int	hello __P((int, char *, int));
 
 #ifndef	_POSIX_SOURCE
 
