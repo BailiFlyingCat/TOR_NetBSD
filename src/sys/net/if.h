@@ -74,22 +74,22 @@ struct ether_header;
  * (Would like to call this struct ``if'', but C isn't PL/1.)
  */
 struct ifnet {
-	char	*if_name;		/* name, e.g. ``en'' or ``lo'' */
-	struct	ifnet *if_next;		/* all struct ifnets are chained */
+	struct	ifnet *if_next;			/* all struct ifnets are chained */
 	struct	ifaddr *if_addrlist;	/* linked list of addresses per if */
-	int	if_pcount;		/* number of promiscuous listeners */
-	caddr_t	if_bpf;			/* packet filter structure */
-	u_short	if_index;		/* numeric abbreviation for this if */
-	short	if_unit;		/* sub-unit for lower level driver */
-	short	if_timer;		/* time 'til if_watchdog called */
-	short	if_flags;		/* up/down, broadcast, etc. */
+	char	*if_name;				/* name, e.g. ``en'' or ``lo'' */
+	short	if_unit;				/* sub-unit for lower level driver */
+	u_short	if_index;				/* numeric abbreviation for this if */
+	short	if_flags;				/* up/down, broadcast, etc. */
+	short	if_timer;				/* time 'til if_watchdog called */
+	int		if_pcount;				/* number of promiscuous listeners */
+	caddr_t	if_bpf;					/* packet filter structure */
 	struct	if_data {
 /* generic interface information */
-		u_char	ifi_type;	/* ethernet, tokenring, etc. */
+		u_char	ifi_type;		/* ethernet, tokenring, etc. */
 		u_char	ifi_addrlen;	/* media address length */
-		u_char	ifi_hdrlen;	/* media header length */
-		u_long	ifi_mtu;	/* maximum transmission unit */
-		u_long	ifi_metric;	/* routing metric (external only) */
+		u_char	ifi_hdrlen;		/* media header length */
+		u_long	ifi_mtu;		/* maximum transmission unit */
+		u_long	ifi_metric;		/* routing metric (external only) */
 		u_long	ifi_baudrate;	/* linespeed */
 /* volatile statistics */
 		u_long	ifi_ipackets;	/* packets received on interface */
@@ -97,8 +97,8 @@ struct ifnet {
 		u_long	ifi_opackets;	/* packets sent on interface */
 		u_long	ifi_oerrors;	/* output errors on interface */
 		u_long	ifi_collisions;	/* collisions on csma interfaces */
-		u_long	ifi_ibytes;	/* total number of octets received */
-		u_long	ifi_obytes;	/* total number of octets sent */
+		u_long	ifi_ibytes;		/* total number of octets received */
+		u_long	ifi_obytes;		/* total number of octets sent */
 		u_long	ifi_imcasts;	/* packets received via multicast */
 		u_long	ifi_omcasts;	/* packets sent via multicast */
 		u_long	ifi_iqdrops;	/* dropped on input, this interface */
@@ -120,9 +120,9 @@ struct ifnet {
 	struct	ifqueue {
 		struct	mbuf *ifq_head;
 		struct	mbuf *ifq_tail;
-		int	ifq_len;
-		int	ifq_maxlen;
-		int	ifq_drops;
+		int	ifq_len;		/* current length of queue */
+		int	ifq_maxlen;		/* maximum length of queue */
+		int	ifq_drops;		/* packets dropped because of full queue */
 	} if_snd;			/* output queue */
 };
 #define	if_mtu		if_data.ifi_mtu
@@ -210,16 +210,16 @@ struct ifnet {
  * together so all addresses for an interface can be located.
  */
 struct ifaddr {
-	struct	sockaddr *ifa_addr;	/* address of interface */
+	struct	ifaddr *ifa_next;		/* next address for interface */
+	struct	ifnet *ifa_ifp;			/* back-pointer to interface */
+	struct	sockaddr *ifa_addr;		/* address of interface */
 	struct	sockaddr *ifa_dstaddr;	/* other end of p-to-p link */
 #define	ifa_broadaddr	ifa_dstaddr	/* broadcast address interface */
 	struct	sockaddr *ifa_netmask;	/* used to determine subnet */
-	struct	ifnet *ifa_ifp;		/* back-pointer to interface */
-	struct	ifaddr *ifa_next;	/* next address for interface */
-	void	(*ifa_rtrequest)();	/* check or clean routes (+ or -)'d */
-	u_short	ifa_flags;		/* mostly rt_flags for cloning */
-	short	ifa_refcnt;		/* count of references */
-	int	ifa_metric;		/* cost of going out this interface */
+	void	(*ifa_rtrequest)();		/* check or clean routes (+ or -)'d */
+	u_short	ifa_flags;				/* mostly rt_flags for cloning */
+	short	ifa_refcnt;				/* count of references */
+	int		ifa_metric;				/* cost of going out this interface */
 };
 #define	IFA_ROUTE	RTF_UP		/* route installed */
 

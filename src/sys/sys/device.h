@@ -129,8 +129,8 @@ typedef int (*cfprint_t) __P((void *, char *));
  * Pseudo-device attach information (function + number of pseudo-devs).
  */
 struct pdevinit {
-	void	(*pdev_attach) __P((int));
-	int	pdev_count;
+	void	(*pdev_attach) __P((int));	/* attach function */
+	int	pdev_count;						/* number of devices */
 };
 
 struct	device *alldevs;	/* head of list of all devices */

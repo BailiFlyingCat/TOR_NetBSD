@@ -45,7 +45,7 @@
 struct	mbuf;
 
 struct	domain {
-	int	dom_family;		/* AF_xxx */
+	int	dom_family;			/* AF_xxx */
 	char	*dom_name;
 	void	(*dom_init)		/* initialize domain data structures */
 		__P((void));

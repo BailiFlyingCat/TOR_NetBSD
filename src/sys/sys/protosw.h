@@ -58,23 +58,23 @@
  * described below.
  */
 struct protosw {
-	short	pr_type;		/* socket type used for */
+	short	pr_type;			/* socket type used for */
 	struct	domain *pr_domain;	/* domain protocol a member of */
 	short	pr_protocol;		/* protocol number */
-	short	pr_flags;		/* see below */
+	short	pr_flags;			/* see below */
 /* protocol-protocol hooks */
 	void	(*pr_input)();		/* input to protocol (from below) */
-	int	(*pr_output)();		/* output to protocol (from above) */
+	int		(*pr_output)();		/* output to protocol (from above) */
 	void	(*pr_ctlinput)();	/* control input (from below) */
-	int	(*pr_ctloutput)();	/* control output (from above) */
+	int		(*pr_ctloutput)();	/* control output (from above) */
 /* user-protocol hook */
-	int	(*pr_usrreq)();		/* user request: see list below */
+	int		(*pr_usrreq)();		/* user request: see list below */ /* user request from process */
 /* utility hooks */
 	void	(*pr_init)();		/* initialization hook */
 	void	(*pr_fasttimo)();	/* fast timeout (200ms) */
 	void	(*pr_slowtimo)();	/* slow timeout (500ms) */
 	void	(*pr_drain)();		/* flush any excess space possible */
-	int	(*pr_sysctl)();		/* sysctl for protocol */
+	int		(*pr_sysctl)();		/* sysctl for protocol */
 };
 
 #define	PR_SLOWHZ	2		/* 2 slow timeouts per second */

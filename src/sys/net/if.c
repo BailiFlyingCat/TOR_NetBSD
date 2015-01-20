@@ -65,7 +65,7 @@ ifinit()
 
 	for (ifp = ifnet; ifp; ifp = ifp->if_next)
 		if (ifp->if_snd.ifq_maxlen == 0)
-			ifp->if_snd.ifq_maxlen = ifqmaxlen;
+			ifp->if_snd.ifq_maxlen = ifqmaxlen;    /* set default length */
 	if_slowtimo(NULL);
 }
 
@@ -84,20 +84,23 @@ if_attach(ifp)
 	unsigned socksize, ifasize;
 	int namelen, unitlen, masklen;
 	char workbuf[12], *unitname;
-	register struct ifnet **p = &ifnet;
+	register struct ifnet **p = &ifnet;    /* head of interface list */
 	register struct sockaddr_dl *sdl;
 	register struct ifaddr *ifa;
-	static int if_indexlim = 8;
+	static int if_indexlim = 8;    /* size of ifnet_addrs array */
 	extern void link_rtrequest();
 
-	while (*p)
+	while (*p)                   /* find end of interface list */
 		p = &((*p)->if_next);
 	*p = ifp;
 	ifp->if_index = ++if_index;
+	
+	/* resize ifnet_addrs array if necessary */
 	if (ifnet_addrs == 0 || if_index >= if_indexlim) {
 		unsigned n = (if_indexlim <<= 1) * sizeof(ifa);
 		struct ifaddr **q = (struct ifaddr **)
 					malloc(n, M_IFADDR, M_WAITOK);
+					
 		if (ifnet_addrs) {
 			bcopy((caddr_t)ifnet_addrs, (caddr_t)q, n/2);
 			free((caddr_t)ifnet_addrs, M_IFADDR);
@@ -110,6 +113,8 @@ if_attach(ifp)
 	unitname = sprint_d((u_int)ifp->if_unit, workbuf, sizeof(workbuf));
 	namelen = strlen(ifp->if_name);
 	unitlen = strlen(unitname);
+	
+	/* compute size of sockaddr_dl structure for this device */
 #define _offsetof(t, m) ((int)((caddr_t)&((t *)0)->m))
 	masklen = _offsetof(struct sockaddr_dl, sdl_data[0]) +
 			       unitlen + namelen;
@@ -123,6 +128,8 @@ if_attach(ifp)
 	if (ifa == 0)
 		return;
 	bzero((caddr_t)ifa, ifasize);
+	
+	/* First: initialize the sockaddr_dl address */
 	sdl = (struct sockaddr_dl *)(ifa + 1);
 	sdl->sdl_len = socksize;
 	sdl->sdl_family = AF_LINK;
@@ -137,6 +144,8 @@ if_attach(ifp)
 	ifa->ifa_rtrequest = link_rtrequest;
 	ifp->if_addrlist = ifa;
 	ifa->ifa_addr = (struct sockaddr *)sdl;
+	
+	/* Second: initialize the sockaddr_dl mask */
 	sdl = (struct sockaddr_dl *)(socksize + (caddr_t)sdl);
 	ifa->ifa_netmask = (struct sockaddr *)sdl;
 	sdl->sdl_len = masklen;

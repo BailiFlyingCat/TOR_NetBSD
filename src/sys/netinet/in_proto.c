@@ -81,70 +81,70 @@ void	eoninput(), eonctlinput(), eonprotoinit();
 extern	struct domain inetdomain;
 
 struct protosw inetsw[] = {
-{ 0,		&inetdomain,	0,		0,
-  0,		ip_output,	0,		0,
-  0,
-  ip_init,	0,		ip_slowtimo,	ip_drain,	ip_sysctl
-},
-{ SOCK_DGRAM,	&inetdomain,	IPPROTO_UDP,	PR_ATOMIC|PR_ADDR,
-  udp_input,	0,		udp_ctlinput,	ip_ctloutput,
-  udp_usrreq,
-  udp_init,	0,		0,		0,		udp_sysctl
-},
-{ SOCK_STREAM,	&inetdomain,	IPPROTO_TCP,	PR_CONNREQUIRED|PR_WANTRCVD,
-  tcp_input,	0,		tcp_ctlinput,	tcp_ctloutput,
-  tcp_usrreq,
-  tcp_init,	tcp_fasttimo,	tcp_slowtimo,	tcp_drain,
-},
-{ SOCK_RAW,	&inetdomain,	IPPROTO_RAW,	PR_ATOMIC|PR_ADDR,
-  rip_input,	rip_output,	0,		rip_ctloutput,
-  rip_usrreq,
-  0,		0,		0,		0,
-},
-{ SOCK_RAW,	&inetdomain,	IPPROTO_ICMP,	PR_ATOMIC|PR_ADDR,
-  icmp_input,	rip_output,	0,		rip_ctloutput,
-  rip_usrreq,
-  0,		0,		0,		0,		icmp_sysctl
-},
-{ SOCK_RAW,	&inetdomain,	IPPROTO_IGMP,	PR_ATOMIC|PR_ADDR,
-  igmp_input,	rip_output,	0,		rip_ctloutput,
-  rip_usrreq,
-  igmp_init,	igmp_fasttimo,	0,		0,
-},
+	{ 0,		&inetdomain,	0,		0,
+	  0,		ip_output,	0,		0,
+	  0,
+	  ip_init,	0,		ip_slowtimo,	ip_drain,	ip_sysctl
+	},
+	{ SOCK_DGRAM,	&inetdomain,	IPPROTO_UDP,	PR_ATOMIC|PR_ADDR,
+	  udp_input,	0,		udp_ctlinput,	ip_ctloutput,
+	  udp_usrreq,
+	  udp_init,	0,		0,		0,		udp_sysctl
+	},
+	{ SOCK_STREAM,	&inetdomain,	IPPROTO_TCP,	PR_CONNREQUIRED|PR_WANTRCVD,
+	  tcp_input,	0,		tcp_ctlinput,	tcp_ctloutput,
+	  tcp_usrreq,
+	  tcp_init,	tcp_fasttimo,	tcp_slowtimo,	tcp_drain,
+	},
+	{ SOCK_RAW,	&inetdomain,	IPPROTO_RAW,	PR_ATOMIC|PR_ADDR,
+	  rip_input,	rip_output,	0,		rip_ctloutput,
+	  rip_usrreq,
+	  0,		0,		0,		0,
+	},
+	{ SOCK_RAW,	&inetdomain,	IPPROTO_ICMP,	PR_ATOMIC|PR_ADDR,
+	  icmp_input,	rip_output,	0,		rip_ctloutput,
+	  rip_usrreq,
+	  0,		0,		0,		0,		icmp_sysctl
+	},
+	{ SOCK_RAW,	&inetdomain,	IPPROTO_IGMP,	PR_ATOMIC|PR_ADDR,
+	  igmp_input,	rip_output,	0,		rip_ctloutput,
+	  rip_usrreq,
+	  igmp_init,	igmp_fasttimo,	0,		0,
+	},
 #ifdef TPIP
-{ SOCK_SEQPACKET,&inetdomain,	IPPROTO_TP,	PR_CONNREQUIRED|PR_WANTRCVD,
-  tpip_input,	0,		tpip_ctlinput,	tp_ctloutput,
-  tp_usrreq,
-  tp_init,	0,		tp_slowtimo,	tp_drain,
-},
+	{ SOCK_SEQPACKET,&inetdomain,	IPPROTO_TP,	PR_CONNREQUIRED|PR_WANTRCVD,
+	  tpip_input,	0,		tpip_ctlinput,	tp_ctloutput,
+	  tp_usrreq,
+	  tp_init,	0,		tp_slowtimo,	tp_drain,
+	},
 #endif
 /* EON (ISO CLNL over IP) */
 #ifdef EON
-{ SOCK_RAW,	&inetdomain,	IPPROTO_EON,	0,
-  eoninput,	0,		eonctlinput,		0,
-  0,
-  eonprotoinit,	0,		0,		0,
-},
+	{ SOCK_RAW,	&inetdomain,	IPPROTO_EON,	0,
+	  eoninput,	0,		eonctlinput,		0,
+	  0,
+	  eonprotoinit,	0,		0,		0,
+	},
 #endif
 #ifdef NSIP
-{ SOCK_RAW,	&inetdomain,	IPPROTO_IDP,	PR_ATOMIC|PR_ADDR,
-  idpip_input,	rip_output,	nsip_ctlinput,	0,
-  rip_usrreq,
-  0,		0,		0,		0,
-},
+	{ SOCK_RAW,	&inetdomain,	IPPROTO_IDP,	PR_ATOMIC|PR_ADDR,
+	  idpip_input,	rip_output,	nsip_ctlinput,	0,
+	  rip_usrreq,
+	  0,		0,		0,		0,
+	},
 #endif
 	/* raw wildcard */
-{ SOCK_RAW,	&inetdomain,	0,		PR_ATOMIC|PR_ADDR,
-  rip_input,	rip_output,	0,		rip_ctloutput,
-  rip_usrreq,
-  rip_init,	0,		0,		0,
-},
+	{ SOCK_RAW,	&inetdomain,	0,		PR_ATOMIC|PR_ADDR,
+	  rip_input,	rip_output,	0,		rip_ctloutput,
+	  rip_usrreq,
+	  rip_init,	0,		0,		0,
+	},
 };
 
 struct domain inetdomain =
-    { AF_INET, "internet", 0, 0, 0, 
-      inetsw, &inetsw[sizeof(inetsw)/sizeof(inetsw[0])], 0,
-      rn_inithead, 32, sizeof(struct sockaddr_in) };
+{ AF_INET, "internet", 0, 0, 0, 
+  inetsw, &inetsw[sizeof(inetsw) / sizeof(inetsw[0])], 0,
+  rn_inithead, 32, sizeof(struct sockaddr_in) };
 
 #ifdef notyet /* XXXX */
 #include "imp.h"
