@@ -94,7 +94,7 @@
  */
 #define	MSIZE		128		/* size of an mbuf */
 #define	MCLSHIFT	11		/* convert bytes to m_buf clusters */
-#define	MCLBYTES	(1 << MCLSHIFT)	/* size of a m_buf cluster */
+#define	MCLBYTES	(1 << MCLSHIFT)	/* size of a m_buf cluster 2^11 = 2048 */
 #define	MCLOFSET	(MCLBYTES - 1)	/* offset within a m_buf cluster */
 
 #ifndef NMBCLUSTERS
