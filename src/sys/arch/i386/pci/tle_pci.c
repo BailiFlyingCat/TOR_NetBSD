@@ -1313,7 +1313,7 @@ tle_pci_attach(parent, self, aux)
     for (i = 0; i < sizeof(sc->sc_arpcom.ac_enaddr); i++)
         sc->sc_arpcom.ac_enaddr[i] = bus_io_read_1(bc, ioh, i);
 
-    sc->sc_mem = malloc(16384, M_DEVBUF, M_NOWAIT);
+    sc->sc_mem = malloc(16384, M_DEVBUF, M_NOWAIT);    /* TOR-TODO: what means 16384 ? */
     if (sc->sc_mem == 0) {
         printf("%s: couldn't allocate memory for card\n", sc->sc_dev.dv_xname);
         return;

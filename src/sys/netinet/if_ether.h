@@ -117,7 +117,7 @@ struct	arpcom {
 	u_char	ac_enaddr[6];		/* ethernet hardware address */
 	struct	in_addr ac_ipaddr;	/* copy of ip address- XXX */
 	struct	ether_multi *ac_multiaddrs; /* list of ether multicast addrs */
-	int	ac_multicnt;		/* length of ac_multiaddrs list */
+	int	    ac_multicnt;		/* length of ac_multiaddrs list */
 };
 
 struct llinfo_arp {

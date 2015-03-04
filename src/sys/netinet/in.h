@@ -77,7 +77,7 @@
  * Internet address (a structure for historical reasons)
  */
 struct in_addr {
-	u_long s_addr;
+	u_long s_addr;	/* 32-bit IP address, net byte order */
 };
 
 /*
@@ -128,11 +128,11 @@ struct in_addr {
  * Socket address, internet style.
  */
 struct sockaddr_in {
-	u_char	sin_len;
-	u_char	sin_family;
-	u_short	sin_port;
+	u_char	sin_len;		/* sizeof (struct sockaddr_in) = 16 */
+	u_char	sin_family;		/* AF_INET */
+	u_short	sin_port;		/* 16-bit port number, net byte order */
 	struct	in_addr sin_addr;
-	char	sin_zero[8];
+	char	sin_zero[8];	/* unused */
 };
 
 /*

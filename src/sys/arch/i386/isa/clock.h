@@ -57,8 +57,8 @@ struct rtc_st {
 	char	rtc_amin;
 	char	rtc_hr;
 	char	rtc_ahr;
-	char	rtc_dow;
-	char	rtc_dom;
+	char	rtc_dow;    /* day of week */
+	char	rtc_dom;    /* day of month */
 	char	rtc_mon;
 	char	rtc_yr;
 	char	rtc_statusa;

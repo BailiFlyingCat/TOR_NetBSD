@@ -316,7 +316,7 @@ rtcget(rtc_regs)
 		regs[i] = inb(IO_RTC+1);
 	}
 	return(0);
-}	
+}
 
 void
 rtcput(rtc_regs)
@@ -401,24 +401,32 @@ inittodr(base)
 	mon = hexdectodec(rtclk.rtc_mon);
 	yr = hexdectodec(rtclk.rtc_yr);
 	yr = (yr < 70) ? yr+100 : yr;
+	printf( "RTC: %d %d %d %d %d %d\n", yr + 1900, mon, dom, hr, min, sec );
 
 	n = sec + 60 * min + 3600 * hr;
 	n += (dom - 1) * 3600 * 24;
 
 	if (yeartoday(yr) == 366)
 		month[1] = 29;
+	
 	for (i = mon - 2; i >= 0; i--)
+	{
 		days += month[i];
+	}
 	month[1] = 28;
+	
 	for (i = 70; i < yr; i++)
+	{
 		days += yeartoday(i);
+	}
 	n += days * 3600 * 24;
-
+    
 	n += tz.tz_minuteswest * 60;
 	if (tz.tz_dsttime)
 		n -= 3600;
+
 	time.tv_sec = n;
-        time.tv_usec = 0;
+    time.tv_usec = 0;
 }
 
 /*

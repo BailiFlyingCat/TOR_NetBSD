@@ -124,9 +124,11 @@ ether_output(ifp, m0, dst, rt0)
 			if (rt->rt_gwroute == 0)
 				goto lookup;
 			if (((rt = rt->rt_gwroute)->rt_flags & RTF_UP) == 0) {
-				rtfree(rt); rt = rt0;
-			lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1);
-				if ((rt = rt->rt_gwroute) == 0)
+				rtfree(rt);
+                rt = rt0;
+		lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1);
+				
+                if ((rt = rt->rt_gwroute) == 0)
 					senderr(EHOSTUNREACH);
 			}
 		}
