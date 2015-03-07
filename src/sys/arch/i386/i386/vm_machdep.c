@@ -58,6 +58,9 @@
 
 #include <machine/cpu.h>
 #include <machine/reg.h>
+#include <machine/pio.h>
+
+#include <i386/isa/ic/i8042.h>
 
 #include "npx.h"
 #if NNPX > 0
@@ -437,13 +440,58 @@ vunmapbuf(bp, len)
 /*
  * Force reset the processor by invalidating the entire address space!
  */
-cpu_reset() {
+/* cpu_reset() {
 
 	/* force a shutdown by unmapping entire address space ! */
-	bzero((caddr_t)PTD, NBPG);
+/* 	bzero((caddr_t)PTD, NBPG);
 
 	/* "good night, sweet prince .... <THUNK!>" */
-	pmap_update(); 
+/* 	pmap_update(); 
 	/* just in case */
+/* 	for (;;);
+} */
+
+ extern	struct gate_descriptor idt[];
+
+cpu_reset()
+{
+	struct region_descriptor region;
+
+	disable_intr();
+
+	/*
+	 * The keyboard controller has 4 random output pins, one of which is
+	 * connected to the RESET pin on the CPU in many PCs.  We tell the
+	 * keyboard controller to pulse this line a couple of times.
+	 */
+	outb(KBCMDP, KBC_PULSE0);
+	delay(100000);
+	outb(KBCMDP, KBC_PULSE0);
+	delay(100000);
+
+	/*
+	 * Try to cause a triple fault and watchdog reset by making the IDT
+	 * invalid and causing a fault.
+	 */
+	bzero((caddr_t)idt, NIDT * sizeof(idt[0]));
+	/* setregion(&region, idt, NIDT * sizeof(idt[0]) - 1); */
+	
+	region.rd_limit = (int)( NIDT * sizeof(idt[0]) - 1 );
+	region.rd_base  = (int)idt;
+	
+	lidt(&region);
+	__asm __volatile("divl %0,%1" : : "q" (0), "a" (0)); 
+
+#if 0
+	/*
+	 * Try to cause a triple fault and watchdog reset by unmapping the
+	 * entire address space and doing a TLB flush.
+	 */
+	bzero((caddr_t)PTD, NBPG);
+	pmap_update(); 
+#endif
+
 	for (;;);
 }
+
+

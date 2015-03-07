@@ -16,6 +16,11 @@
 #define	KBDATAP		0x60	/* kbd data port (I) */
 #define	KBOUTP		0x60	/* kbd data port (O) */
 
+#define	 KBC_PULSE0	0xfe	/* pulse output bit 0 */
+#define	 KBC_PULSE1	0xfd	/* pulse output bit 1 */
+#define	 KBC_PULSE2	0xfb	/* pulse output bit 2 */
+#define	 KBC_PULSE3	0xf7	/* pulse output bit 3 */
+
 #define	K_RDCMDBYTE	0x20
 #define	K_LDCMDBYTE	0x60
 
