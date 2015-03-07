@@ -330,7 +330,8 @@ rtcput(rtc_regs)
 	outb(IO_RTC, RTC_STATUSB);
 	x = inb(IO_RTC+1);
 	outb(IO_RTC, RTC_STATUSB);
-	outb(IO_RTC+1, x | RTC_SET); 	
+	outb(IO_RTC+1, x | RTC_SET);
+		
 	for (i = 0; i < RTC_NREGP; i++) {
 		outb(IO_RTC, i);
 		outb(IO_RTC+1, regs[i]);
@@ -449,10 +450,13 @@ resettodr()
 
 	s = splclock();
 	if (rtcget(&rtclk))
-                bzero(&rtclk, sizeof(rtclk));
+    {
+        bzero(&rtclk, sizeof(rtclk));
+        printf( "rtcget is return error!\n" );
+    }
 	splx(s);
 
-	diff = tz.tz_minuteswest * 60;
+    diff = tz.tz_minuteswest * 60;
 	if (tz.tz_dsttime)
 		diff -= 3600;
 	n = (time.tv_sec - diff) % (3600 * 24);   /* hrs+mins+secs */
@@ -462,21 +466,22 @@ resettodr()
 	rtclk.rtc_hr = dectohexdec(n/60);
 
 	n = (time.tv_sec - diff) / (3600 * 24);	/* days */
+
 	rtclk.rtc_dow = (n + 4) % 7;  /* 1/1/70 is Thursday */
 
 	for (j = 1970, i = yeartoday(j); n >= i; j++, i = yeartoday(j))
 		n -= i;
-
-	rtclk.rtc_yr = dectohexdec(j - 1900);
+    
+	rtclk.rtc_yr = dectohexdec( ( j - 1900 ) % 100 );
 
 	if (i == 366)
 		month[1] = 29;
 	for (i = 0; n >= month[i]; i++)
 		n -= month[i];
 	month[1] = 28;
-	rtclk.rtc_mon = dectohexdec(++i);
-
-	rtclk.rtc_dom = dectohexdec(++n);
+    
+	rtclk.rtc_mon = dectohexdec( ++i );
+	rtclk.rtc_dom = dectohexdec( ++n );
 
 	s = splclock();
 	rtcput(&rtclk);
