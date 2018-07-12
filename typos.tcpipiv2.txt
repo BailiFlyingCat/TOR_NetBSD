@@ -1,0 +1,1122 @@
+-----------------------------------------------------------------------------
+This file contains all typos found in the book "TCP/IP Illustrated, Volume 2"
+by Gary R. Wright and W. Richard Stevens, Addison-Wesley, 1995,
+ISBN 0-201-63354-X.  (Last updated July 12, 1999)
+
+Note: If you fetched this file using anonymous ftp from ftp.uu.net,
+      be aware that a more current copy can probably be found at
+      the home page http://www.kohala.com/~rstevens.
+
+See also the "Comments to Readers" at the end of this file.
+-----------------------------------------------------------------------------
+
+The following errors are corrected in the Seventh Printing and later
+(check the last line on the copyright page to determine the printing).
+-----------------------------------------------------------------------------
+
+p.  84:	8th line of text: "if the driver selects a length" should be
+	"if the driver does not select a length".
+
+p.  90:	9th line of description for lines 100-116: "ifa_addrlist" should be
+	"if_addrlist".
+
+p. 100:	Indented paragraph near middle of page: "(le_softc[0]), le_softc"
+	remove the extraneous "le_softc" after the comma.
+
+p. 104:	3rd line beneath Figure 4.12: "M_MCAST is set in the mbuf header"
+	should be "M_MCAST is set in the flags variable".
+
+p. 1143: On the index entry for "if_addrlist" change "91" to "90-91".
+
+p. 1144: Delete index entry for "ifa_addrlist".
+
+The following errors are corrected in the Sixth Printing and later (check the
+last line on the copyright page to determine the printing).
+-----------------------------------------------------------------------------
+
+p.  65:	6th line below Figure 3.3: "such an integer value" should be
+	"such as an integer value".
+
+p. 337:	3rd line of 3rd paragraph: "host have" should be "host to have".
+
+p. 339:	3rd line of 3rd paragraph: "(Figure 6.17)" should be "(Figure 6.19)".
+
+p. 341:	1st line of 3rd paragraph: "a Ethernet" should be "an Ethernet".
+
+p. 355:	1st line of Section 12.11: "(Figure 6.17)" should be "(Figure 6.19)".
+
+p. 364:	2nd line of description for lines 419-441: "interfaces arpcom
+	structure" should be "interface's arpcom structure".
+
+p. 366:	Figure 12.34: the rightmost structure should be "ip_moptions{}"
+	not "in_moptions{}".
+
+p. 376:	2nd line of descriptiron for lines 129-155: "If they do not"
+	should be "If it does not".
+
+p. 395:	First line "123-146" should be "123-156".
+
+p. 405:	An error was introduced with the 2nd printing: the final word on
+	this page "in" moved to the top of p. 406.  This was fixed in the
+	6th printing when p. 406 was reprinted (next errata item).
+
+p. 406:	1st line of last paragraph: "Figure 14.16 illustrates" should be
+	"Figure 14.15 illustrates".
+
+p. 477:	4th line from top: "The flow control algorithms" should be "The
+	buffering algorithms".
+
+p. 477:	5th line from top: "Sections 16.4 and 16.8" should be "Sections
+	16.7 and 16.12".
+
+p. 491:	Immediately before the 3rd paragraph ("Figure 16.22 shows") add
+	the unnumbered section heading "sosend Code".
+
+p. 677:	2nd line of bullet 3: "interface route" should be "network route".
+
+p. 680:	Figure 21.4: Description for arpt_prune should be "#seconds between
+	checking ARP list (5 * 60)".
+
+p. 680:	Figure 21.4: Description for arpt_keep should be "#seconds ARP
+	entry valid once resolved (20 * 60)".
+
+p. 692:	3rd line of description of lines 415-420: "Figure 21.1" should be
+	"Figure 21.3".
+
+p. 693:	2nd line from bottom: line numbers in margin should be "433-436".
+
+p. 698:	Caption for Figure 21.24: "arpresolve2" should be "arpresolve".
+
+p. 701:	2nd paragraph above Figure 21.26: "if the entry is not found and
+	a new entry should be created" should be "if a new entry should be
+	created if the entry is not found".
+
+p. 702:	Indented paragraph at the bottom of the page: delete "comment in the"
+	so that it begins "The log message".
+
+p. 706:	3rd line of description for lines 92-105: "1 clock tick" should be
+	"1 second".
+
+p. 1077:Last line of 13.3: "Figure 5.16" should be "Figure 5.17".
+
+The following errors are corrected in the Fourth Printing and later (check the
+last line on the copyright page to determine the printing).
+-----------------------------------------------------------------------------
+
+p. xxii:W. Richard Stevens' home page has moved to
+	http://www.kohala.com/~rstevens.
+
+p.   9:	5th line from the bottom: the [Piscitello and Chapin 1994] reference
+	is 1993, not 1994.
+
+p.  32:	End of 2nd line from the bottom: "chain mbufs" should be "mbuf chain".
+
+p.  33:	2nd line from top of page: "received packets contains" should be
+	"received packets it contains".
+
+p.  52:	Description for MFREE: "On return m's successor" should be "On
+	return, the pointer to m's successor".
+
+p.  53:	In the description of m_adj, all three occurrences of "mbuf" should
+	be "mbuf chain".
+
+p.  53:	In the function prototype for m_devget(), one more closing paren
+	should appear between the "u_int" and the semicolon.
+
+p.  56:	Last line: "on" should be "in".
+
+p.  63:	3rd line of 3rd paragraph: "supports provides" should be "provides".
+
+p.  70:	2nd line from bottom: "is quick solution" should be "is a quick
+	solution".
+
+p.  73:	2nd line of indented paragraph: "to call splx before m_free" should be
+	"to call splx before m_freem".
+
+p.  87:	2nd line of 2nd paragraph: "pointer into a sockaddr_dl structure to a"
+	should be "pointer to a sockaddr_dl structure into a".
+
+p.  90:	2nd line of 1st paragraph: "just after the ifnet structure" should be
+	"just after the ifaddr structure".
+
+p.  91:	Caption for Figure 3.39: "ifnet" should be "ifaddr".
+
+p.  95:	6th line from bottom of page: "Figure 3.6" should be "Figure 3.11".
+
+p.  97:	Figure 4.5, the counter if_imcasts really counts "#packets received
+	as multicasts or broadcasts".
+
+p. 115:	Figure 4.21: the ellipses for the functions sltioctl, loioctl, and
+	slioctl should not be shaded, as they are not described in Chapter 4.
+
+p. 130:	For sl_close in Figure 5.7 "sl_softc structures" should be
+	"sl_softc structure".
+
+p. 131:	Indented note: "In Net/3 sc_ttyp and t_sc ..." should have the
+	word "respectively" added to the end of the sentence.
+
+p. 136:	Second sentence describing lines 637-649: "the pointers are
+	advanced" should be "the pointer is advanced".
+
+p. 146:	Second line of third paragraph: "causes slstart to fall out of the
+	inner while loop".  Change "inner" to "middle".
+
+p. 151:	Line 75 of the program contains an extraneous "a".
+
+p. 152:	First line describing code lines 69-83: "constructs the BPF loopback
+	packet" should be "constructs the BPF loopback packet header".
+
+p. 153:	Last line of Section 5.5: "their destination address" should be
+	"their destination address family".
+
+p. 166:	The code description line numbers "192-206" near the bottom of the
+	page should be "192-201".
+
+p. 168:	The code description line numbers near the bottom of the page:
+	"353-357" should be "353-359" and "358-374" should be "360-374".
+
+p. 189:	6th line from bottom: "PRxxx" should be "PR_xxx".
+
+p. 193:	Last sentence that begins on the previous page ("The") and continues
+	on this page should read: "The offset of an IP address from the
+	beginning of a sockaddr_in structure is 32 bits and the size of
+	the structure is 16 bytes (Figure 18.27)."
+
+p. 194:	Last line: "lists" should be "list".
+
+p. 202:	Figure 7.25: The two labels "ICMPCTL_MASKREPL" and "UDPCTL_CHECKSUM"
+	should be interchanged.
+
+p. 207:	2nd line of "Statistics": "Figure 8.4 shows some sample output" should
+	reference Figure 8.5.
+
+p. 211:	Figure 8.8: "ip_cksum" should be "ip_sum".
+
+p. 216:	In the description for code lines 161-177, both occurrences of "mbuf"
+	should be "mbuf chain".
+
+p. 219:	Figure 8.14: the Ethernet address for "ia_broadaddr" should be
+	140.252.13.63, not 140.252.13.224.
+
+p. 220:	First line describing code lines 325-332: "The protocol specified in
+	the datagram is mapped by ip_p with the ip_protox array" should be
+	"The protocol specified in the datagram (ip_p) is mapped with the
+	ip_protox array".
+
+p. 221:	Indented paragraph halfway down page: "addresses" should be "address".
+
+p. 229:	Caption for Figure 8.23: "flag" should be "flags".
+
+p. 235:	The reference "[Mano 1982]" at the end of the 5th paragraph should
+	be dated 1993.
+
+p. 239:	Last line of Section 8.7: change "./sys/vax/vax/in_cksum.c" to
+	"sys/vax/in_cksum.c".
+
+p. 243:	First line of PRCO_GETOPT processing: "Figure 8.32" should be
+	"Figure 8.33".
+
+p. 253:	Following the sentence that ends below Figure 9.10 ("is recorded")
+	add the following sentence: "(The INA and SA macros are defined in
+	Figure 9.15.)".
+
+p. 258:	Last line of text: "route route" should be "source route".
+
+p. 259:	Line numbers on final code description should be "784-790".
+
+p. 260:	Add line numbers "791-804" to the code description (the last 4 lines
+	of the page).
+
+p. 265:	4th line from the top: "ip_forward where they are merged" should be
+	"ip_output where they are merged".
+
+p. 265:	3rd line from the bottom: "ip_dooptions does not expect" should be
+	"ip_output does not expect".
+
+p. 269:	Line 564 of the code should begin with "int".
+
+p. 271:	Near bottom of page, two occurrences of "SRR" should be "SSRR".
+
+p. 283:	2nd last line of page: "mtod macros" should be "dtom macro".
+
+p. 292:	Last line of final indented paragraph: swap order of "ip_deq" and
+	"ip_enq" (so they are in the same order as "insque and "remque".
+
+p. 292:	3rd line from bottom: "after reassembly" should be "during reassembly".
+
+p. 298:	5th line from bottom, remove parens around "(Figure 2.13)".
+
+p. 309:	Figure 11.12, last line: replace second column of "0" with
+	"icmp_sysctl" and replace third column of "not used by ICMP"
+	with "modify ICMP parameters".
+
+p. 310:	Second line beneath Figure 11.13: "(Figure 10.11)" should be
+	"(Figure 8.15)".
+
+p. 312:	Second to last line of indented paragraph: "packet instead of"
+	should be "packet, instead of".
+
+p. 312:	Line above Figure 11.16: "several constants" should be "several
+	constants and a macro".
+
+p. 312:	Figure 11.16: caption: "Constants" should be "Constants and a macro".
+
+p. 314:	Figure 11.17: the three fields labelled "len" should be "code".
+
+p. 314:	Figure 11.17: the three descriptions "IP header from bad packet"
+	should be "IP header and data from bad packet".
+
+p. 314:	Figure 11.17: the length of the final field "8 bytes" should be
+	"at least 28 bytes".
+
+p. 319:	Figure 11.24, caption: "address request" should be "address mask
+	request".
+
+p. 321:	Second line: "the code at reflect (Figure 11.21) reverses" should
+	be "the code at reflect (Figure 11.21) calls icmp_reflect, which
+	reverses".
+
+p. 323: Third line from bottom: "statement at raw (Figure 11.15)" should
+	be "statement at raw".
+
+p. 324:	Figure 11.29: the box labelled "ICMP input processing" should be
+	"ICMP request processing" and the label beneath should be changed
+	from "(Figure 11.15)" to "(Figure 11.21)".
+
+p. 324:	4th line from the bottom of the page: "The length in bytes of
+	the original IP packet" should be "The length in bytes of the
+	original IP header".
+
+p. 350:	1st line of 3rd paragraph below Figure 12.18: "A multicast datagram
+	that start with", "start" should be "starts".
+
+p. 473:	Description for lines 115-119: should be: "If the socket is on a
+	connection queue (so_head is nonnull), soqremque is called to remove
+	the socket.  An attempt is made to remove the socket from the
+	incomplete connection queue and if this fails, then from the
+	completed connection queue.  One of the removals must succeed,
+	or the kernel panics, since so_head was nonnull."
+
+p. 478:	Figure 16.6: definitions of sorwakeup and sowwakeup: "events on sb"
+	should be "events on so".
+
+p. 478:	Figure 16.7, definition of sbspace: add parens: should be
+	min((sb_hiwat - sb_cc), (sb_mbmax - sb_mbcnt)).
+
+p. 479:	Figure 16.7: definitions of sbappend and sbinsertoob: add the
+	sentence "Call sbcompress".
+
+p. 483:	"307-319" should be "307-321" and "320-334" should be "322-334".
+
+p. 493:	"395-414" should be "397-413".
+
+p. 494:	Description for lines 312-313: 3rd line: "if some data has been
+	received" should be "if some data has been sent".
+
+p. 500:	5th line from top of page: "pointer to the protosw array" should
+	be "pointer in the protosw array".
+
+p. 500:	2nd paragraph of "Performance considerations", 2nd line: "to a
+	sending" should be "to sending".
+
+p. 515:	2nd and 3rd lines from the top: "(sb_cc < uio_resid) and MSG_DONTWAIT
+	is not set," should be "(sb_cc < uio_resid and MSG_DONTWAIT is not
+	set),".
+
+p. 515:	10th line from the top: the test "(uio_resid <= sb_hiwat)" should
+	be a "greater-than" test, not less-than-or-equal-to.
+
+p. 516:	4th line of text: "before a data arrives" should be "before any
+	data arrives".
+
+p. 531:	Description of lines 41-44: "sl_pid" should be "si_pid".
+	Also, both occurrences of "sl_flags" should be "si_flags".
+
+p. 538:	Figure 17.1: "pr_ctloutout" should be "pr_ctloutput".
+
+p. 539:	Description of lines 565-597: line 2: "from process" should be
+	"from the process".
+
+p. 544:	Description of lines 831-840: 3rd line: "Sections 16.7 and 16.11"
+	should be "Sections 16.7 and 16.12".
+
+p. 546:	Description of lines 856-871: 3rd line: "mbuf pointed to by mp"
+	should be "mbuf pointed to by *mp".
+
+p. 548:	Paragraph above Figure 17.14: "The third and last part" should be
+	"The fourth and last part".
+
+p. 548:	Description of lines 907-917: "copied into var" should be "copied
+	into val".
+
+p. 552:	"186-194" should be "186-209".
+
+p. 554:	Indented paragraph: "As we described in Chapter 19" should be
+	"As we describe in Chapter 19".
+
+p. 559:	Last line of second bullet: "a interface" should be "an interface".
+
+p. 562:	Second indented paragraph, add the sentence: "These are actually
+	binary radix tries with one-way branching removed."
+
+p. 566:	3rd line of first example: "A network mask" should be "A network
+	match".
+
+p. 566:	3rd line, 3rd paragraph of first example: "Another search is made
+	started" should be "Another search is made starting".
+
+p. 567:	Caption of Figure 18.7 should refer to Figure 18.4, not Figure 18.6.
+
+p. 575:	Last word of indented paragraph should be "structure" not
+	"structures".
+
+p. 576:	Description for RNF_ROOT in Figure 18.20 should be "node is in the
+	radix_node_head structure".
+
+p. 579:	4th line from top: "so_dst" should be "ro_dst".
+
+p. 582:	Figure 18.28: the 4th field in the first sockaddr_dl{} pointed to
+	by the first ifaddr{} should be "6", not "18".
+
+p. 582:	Figure 18.28: the rt_gwroute points to an rtentry{}, not a
+	radix_node{} (although the latter is the first member of the former).
+
+p. 582:	Figure 18.28: the second member of the second ifaddr{} should be
+	named "ifa_broadaddr" not "ifa_brdaddr".
+
+p. 583:	Figure 18.29: the comment for rn_inithead() should be
+	"dom_rtattach() function" not "dom_attach() function".
+
+p. 595:	2nd line in description of lines 197-210: "linked list of radix_node"
+	should be "lined list of radix_mask".
+
+p. 604:	end of 2nd last line on page: "process control block" should be
+	"protocol control block".
+
+p. 629:	4th line of description of lines 588-591: "rti_info array named
+	info" should be "rti_info array in info".
+
+p. 632:	4th line of Section 19.13: "has an argument to a walkarg structure"
+	should be "has as an argument a pointer to a walkarg structure".
+
+p. 640:	End of 5th line from top: "The third pointer" should be "The
+	third argument".
+
+p. 644:	Exercise 19.2: "with the command" should be "with a command".
+
+p. 852:	2nd line of description for lines 62-68: "a segment has not been
+	received from the other end in one round-trip time" should be "a
+	segment has not been received from the other end in one RTO".
+
+p. 872:	Figure 26.23 should really start with line 222 (the label "send",
+	which is shown in Figure 26.1).
+
+p. 881:	The caption for Figure 26.31 should be: "tcp_output function:
+	update sequence number, initialize retransmit timer."
+
+p. 971:	5th line from bottom: "been been" should be "been".
+
+p. 1070: Last line: "notices that the IP header length" should be "notices
+	 that the length in the IP header".
+
+p. 1073: Answer for Exercise 10.3: "(204 + 20)" should be "(216 + 20)".
+
+p. 1079: Answer for Exercise 18.1: 2nd paragraph: "same bit in the routing
+	 table mask is 1" should be "same bit in the routing table mask is 0".
+
+p. 1099: 4th bullet: "ip_cksum" should be "in_cksum".
+
+p. 1105: 3rd bullet, second line: "maximum MTU" should be "MTU".
+
+p. 1105: 6th bullet, second line: "minimum path MTU" should be "path MTU".
+
+p. 1106: 7th bullet, first line: "an link-layer" should be "a link-layer".
+	 Next line of this bullet: "messages that arrive" should be
+	 "messages in response to packets that arrived".
+
+p. 1106: 8th bullet: "an noninitial" should be "a noninitial".
+
+p. 1106: 9th bullet, first line: "an datagram" should be "a datagram".
+
+p. 1107: 2nd bullet, second line: "No" should be "Partially".
+
+p. 1122: 3rd bullet of "Receiving ICMP Messages from IP", 3rd line: "these
+	 ICMP error" should be "these ICMP errors".
+
+p. 1130: [Partridge 1993] is available from
+	    http://www.kohala.com/~rstevens/vanj.93sep07.txt
+
+p. 1143: Add page 309 to the list for icmp_sysctl.
+
+p. 1146: Add page 1099 to the list for in_cksum.
+
+p. 1148: Delete the index entry for ip_cksum.
+
+p. 1149: Add page 211 to the list for ip_sum.
+
+p. 1160: Add page 579 to the list for ro_dst.
+
+p. 1163: Create a new entry for si_flags, with page 531.
+
+p. 1163: Add page 531 to the list for si_pid.
+
+p. 1164: Delete the entry for sl_flags.
+
+p. 1164: Delete the entry for sl_pid.
+
+p. 1165: Delete the entry for so_dst.
+
+The following errors are corrected in the Third Printing and later (check the
+last line on the copyright page to determine the printing).
+-----------------------------------------------------------------------------
+
+front right end paper: Add "ifqueue   71"
+
+p. xvii: Section 28.6 should be titled "Initiation of Passive Open, Completion
+	 of Active Open".
+
+p. xxii: Add the authors' home page addresses:
+	 	http://www.connix.com/~gwright
+	 	http://www.noao.edu/~rstevens
+
+p.  96:	Figure 4.3: net/if_ether.h should be netinet/if_ether.h.
+
+p.  98:	First bullet beneath Figure 4.6: denominator of 23,234,729 should be
+	29,234,729 (the same value as in the Figure).
+
+p. 168:	5th line from bottom: "in_control saves the previous address" should
+	be "in_ifinit saves the previous address".
+
+p. 171:	2nd line of text: "in_control copies" should be "in_ifinit copies".
+
+p. 171:	6th line of text: "in_control returns" should be "in_ifinit returns".
+
+p. 195:	Figure 7.16: add "raw" to the single entry for "routesw[]:".
+
+p. 289:	Figure 10.17: the ending offset for the third fragment for ip_id=5
+	should be 815, not 814.
+
+p. 323:	end of 4th line: "(Section 7.3)" should be "(Section 7.7)".
+
+p. 340:	Figure 12.2: net/if_ether.h should be netinet/if_ether.h.
+
+p. 366:	Figure 12.34: last entry in in_moptions{} structure should be
+	"membership[19]" not "membership[20]".
+
+p. 407:	Figure 14.15: "viftable:" should be "viftable[]:".
+
+p. 420:	Figure 14.29: "mrttable:" should be "mrttable[]:".
+
+p. 425:	2nd line beneath Figure 14.36: replace "dotted arrows" with
+	"dashed arrows".
+
+p. 442:	Add an entry for sodisconnect to Figure 15.9, between socantrcvmore
+	and soisdisconnecting:
+
+		sodisconnect	Issue the PRU_DISCONNECT request.
+
+				int  sodisconnect(struct socket *so);
+
+p. 464:	Figure 15.30: in keeping with the style of the book, the "kern/"
+	in "kern/uipc_socket2.c" should be removed from the horizontal rules.
+
+p. 560:	Figure 18.1: the subnet address of the Ethernet should be 140.252.13.32,
+	not 140.252.13.0.
+
+p. 560:	Last character of last line on page should be a period, not a comma.
+
+p. 582:	Figure 18.28: in the inpcb{} at the upper right the first byte of the
+	IP address should be "80", not "08".
+
+p. 582:	Figure 18.28: in the three sockaddr_in{} at the bottom right, the IP
+	address of the top one (pointed to by the ifa_addr pointer of the
+	ifaddr{}) should end in .35, not .33.  Siimilarly the final hex byte
+	beneath it should be 23, not 21.
+
+p. 743:	Figure 22.32: in the line up and to the left from "icmp_input" the 
+	comma should be removed from "time exceeded" and placed on "source
+	quench".
+
+p. 749:	Sentence above Figure 22.36: "has expired for the third time in a row
+	for a given connection" should be "has expired four or more times in
+	a row for a given connection (Figure 25.26)".
+
+p. 780:	Second line of item 2: "the destination address for the reply"
+	should be "the source address for the reply".
+
+p. 798:	Figure 24.4: tcps_accepts should be described as "#SYNs received in
+	LISTEN state".
+
+p. 798:	Figure 24.4: tcps_connects should be described as "#connections
+	established actively or passively".
+
+p. 828:	(This and next three typos are caused by Figures 25.15 and 25.16
+	being numbered out-of-order-of-appearance.)
+	Line above "Connection-establishment timer expires after 75 seconds"
+	should reference Figure 25.16, not Figure 25.15.
+
+p. 828:	Line above Figure 25.16 should be "Figure 25.15 shows these two timers".
+
+p. 828:	Figure 25.16 should be numbered 25.15.
+
+p. 829:	Figure 25.15 should be numbered 25.16.
+
+p. 830:	7th line from bottom: 14339 should be 14399.
+
+p. 830:	First line of final paragraph should reference Figure 25.16, not
+	Figure 15.15.
+
+p. 852:	3rd line of Section 26.2: "Is an ACK is": remove extraneous "is".
+
+p. 892:	Description for 5th entry in Figure 27.1 should reference Figure 25.15
+	instead of Figure 25.16.
+
+p. 897:	The code description labeled "307-309" should be labeled "307-311".
+	The final sentence of this description ("The socket is marked ...")
+	should be replaced with "soisdisconnected marks the socket as
+	disconnected."
+
+p. 897:	The code description labeled "310-318" should be labeled "312-318".
+
+p. 917:	(This and the next three typos are caused by Figures 27.27 and 27.26
+	being numbered out-of-order-of-appearance.)
+	Line following Figure 27.25: "Figure 27.26 shows the main body"
+	should be "Figure 27.27 shows the main body".
+
+p. 917:	First line beneath "Sample Output" heading: "Figure 27.27 shows the
+	first four lines" should begin "Figure 27.26".
+
+p. 917:	Figure 27.27 should be numbered 27.26.
+
+p. 918:	Figure 27.26 should be numbered 27.27.
+
+p. 942:	Section 28.6 should be titled "Initiation of Passive Open, Completion
+	of Active Open".  Similarly the subtitle 4 lines down should be
+	"Initiation of Passive Open".
+
+p. 946:	End of 2nd line from top: "Fig-ure 28.28 is executed" should reference
+	Figure 28.29.
+
+p. 948:	In the heading for the sentence describing line 559:
+	"connection-establishment timer" should be "retransmission timer".
+	Change the sentence below the heading accordingly.
+
+p. 957: (This and the next three typos are caused by Figures 28.28 and 28.29
+	being numbered out-of-order-of-appearance.)
+	Halfway down the page: "The next piece of code, shown in Figure 28.28"
+	should reference Figure 28.29.
+
+p. 957:	Line above Figure 28.29: For example, in Figure 28.29" should
+	reference Figure 28.28.
+
+p. 957:	Figure 28.29 should be numbered 28.28.
+
+p. 958:	Figure 28.28 should be numbered 28.29.
+
+p. 979:	Delete page 118 from the index entry for FIN_WAIT_1.
+	Add page 118 to the index entry for FIN_WAIT_2 (980418).
+
+p. 992:	Last word of first line of Section 29.11: "dropaterack" should be
+	"dropafterack".
+
+p. 1012:Last line of description for lines 155-158 should reference
+	Figure 25.15, not Figure 25.16.
+
+p. 1036:Figure 31.14: the label "bpf_dtab:" above the array should be
+	"bpf_dtab[]:" since it's accessed as an array.
+
+p. 1037:Figure 31.15: same fix as for Figure 31.14.
+
+p. 1060:First line of text: "at least one IP interface must be configured,":
+	delete "IP".
+
+p. 1085:Last line of solution for Exercise 25.6 should reference Figure 25.16,
+	not Figure 25.15.
+
+p. 1089:2nd line from top: "as checked for in Figure 28.28" should reference
+	Figure 28.29.
+
+p. 1117:1st bullet under "TCP Options": "Yes:" should be "Yes."
+
+p. 1118:3rd bullet: "Yes:" should be "Yes."
+
+p. 1119:Line above "Retransmissions": "Yes, as shown in Figure 28.28" should
+	reference Figure 28.29.
+
+p. 1119:2nd line below "Retransmissions": "Yes:" should be "Yes."
+
+p. 1119:5th bullet below "Retransmissions": Figure 25.16 should be Figure 25.15.
+
+p. 1119:6th bullet below "Retransmissions": Figure 25.16 should be Figure 25.15.
+
+p. 1121:4th bullet under "Connection Failures": "No:" should be "No."
+
+p. 1121:6th bullet under "Connection Failures": Figure 25.16 should be
+	Figure 25.15.
+
+p. 1121:7th bullet under "Connection Failures": Figure 25.16 should be
+	Figure 25.15.
+
+p. 1121:3rd bullet under "Keepalive Probes": "Yes:" should be "Yes."
+
+p. 1126:[Braden 1993] is available from:
+	http://www.kohala.com/~rstevens/tcplw-extensions.txt
+
+p. 1126:[Comer and Lin 1994] is available from:
+	ftp://gwen.cs.purdue.edu/pub/lin/TCP.atm.ps.Z
+
+p. 1128:The URL for the [Jacobson 1993] overheads has moved from the papers/
+	directory to the talks/ directory.
+
+p. 1134:After "AIX" add the entry "alias, IP address, 174-177".
+
+p. 1137:Remove page 948 from the entry for "connection-establishment timer".
+
+p. 1141:Add the entry "template, 885" under "header".
+
+p. 1145:Add page 71 to the entry for "ifqueue, structure".
+
+p. 1154:Above "National Optical Astronomy Observatory" add the entry "Nagle
+	algorithm, 858-859".
+
+p. 1159:Add page 948 to the entry for "retransmission timer".
+
+p. 1166:Add page 442 to the entry for sodisconnect and delete page 897
+	from this entry.
+
+p. 1166:Add page 897 to the entry for soisdisconnected.
+
+back right end paper: Add "sodisconnect   442"
+                      Add "TCP_REXMTVAL   840"
+
+The following errors are corrected in the Second Printing and later (check the
+last line on the copyright page to determine the printing).
+-----------------------------------------------------------------------------
+
+p.   i: (The unnumbered title page with the Addison-Wesley logo and locations
+	at the bottom.)  The order of the author's names is reversed.
+
+p.  xx:	The running headers at the top of the page are missing from all the
+	pages in the Preface (xx, xxi, xxii).
+
+p.  31:	Last sentence on page should be "an example of this type of mbuf"
+	(add the word "of").
+
+p.  34:	For clarity the following indented paragraph should be added to the
+	bottom of the page: "The difference in the placement of the protocol
+	headers in the first mbuf for the UDP and TCP examples is caused by
+	UDP calling M_PREPEND (Figure 23.15 and Exercise 23.1) while TCP
+	calls MGETHDR (Figure 26.25)."
+
+p.  43:	6th line from bottom should be "which allocate and release" (the "a"
+	should be "and").
+
+p.  53:	Figure 2.20: third line of description for m_copym: "chain start at"
+	should be "chain starting at".
+
+p.  54:	2nd paragraph of bullet 3: "We encounter this with the interface
+	queues" should be "We encounter this with the interface queues
+	(Figure 3.13)" for added clarification.
+
+p.  67:	Title for Figure 3.6 should be: "ifnet structure: implementation
+	information."
+
+p. 110:	3rd line describing lines 142-146: "bcopy duplicates the entire
+	header": "entire header" should be "destination address".
+
+p. 111:	First line should be "room for 14 bytes" (the "4" should be "14).
+
+p. 152:	Figure 5.29: the leftmost mbuf should be labeled "m0", not "mo".
+
+p. 164:	3rd line should be "where most of the processing occurs" (add the word
+	"of").
+
+p. 170:	Code line 393: remove one "may".
+
+p. 191:	Next to last line should start with "Figure 7.14", not "Figure 7.13".
+
+p. 193:	In the indented paragraph below Figure 7.14, replace "rip_input"
+	with "rip_init".
+
+p. 207:	Add an entry to Figure 8.3 for "ipforward_rt", a "struct route" that
+	contains a "cache of most recent forwarded route".
+
+p. 220:	Second line of Section 8.5: "ip_output calls the function ip_forward"
+	should be "ipintr calls the function ip_forward".
+
+p. 226:	In the description of lines 941-954, add the following sentence
+	right after "in the route ipforward_rt.": "The IP_ALLOWBROADCAST
+	flag allows the packet being forwarded to be a directed broadcast
+	to a local network."
+
+p. 228:	Final sentence of first paragraph of Section 8.6: replace "Chapter 32"
+	with "Chapter 20" and replace "protocol-independent socket layer calls"
+	with "protocol-independent routing sockets call".
+
+p. 229:	Figure 8.23: add another line to the table:
+	    IP_RAWOUTPUT  Packet contains preconstructed IP header
+
+p. 239:	In the two function prototypes for getsockopt() and setsockopt(),
+	the 4th argument (optval) should be a "const void *" for setsockopt(),
+	and just a "void *" for getsockopt().
+
+p. 241:	The comment in the 2nd shaded area in Figure 8.31 references
+	PRCO_SETOPT, which should be PRCO_GETOPT.
+
+p. 245:	The description for lines 996-1008 should read: The switch statement
+	selects the appropriate call to sysctl_int, which accesses or modifies
+	ipforwarding, ipsendredirects, or ip_defttl.  EOPNOTSUPP is returned
+	for unrecognized options.
+
+p. 261:	Figure 9.20: the parenthetical note next to srcopt[0] should be
+	"IPOPT_LSRR or IPOPT_SSRR" (which correspond to the two values
+	shown, 131 and 137).
+
+p. 262:	7th line from the bottom should be "(ipt_flg equals 1 or 3)"
+	(the "2" should be a "3").
+
+p. 271:	4th line from bottom should be "will be removed and" (add the "be").
+
+p. 273:	Exercise 9.3: in final sentence "source routes" should be "source
+	route".
+
+p. 279:	Code description for lines 285-290 should be: "Copy the IP header
+	and IP options from the original packet into the new packet.  The
+	former is copied with a structure assignment.  ip_optcopy ...".
+
+p. 283:	2nd sentence of Section 10.5 should be "In Figure 8.15 we omitted"
+	(not Figure 8.25).
+
+p. 288:	The null "prev" pointer in the top ipq{} should be a pointer to the
+	end of the list, and the null "next" pointer in the bottom ipq{}
+	should be a pointer to the start of the list.  It's a circular list.
+
+p. 292:	In Figure 10.20 the prototype for remque should be "void *node"
+	and not "void *prev".
+
+p. 295:	Code line 401 should end with a closing paren and an opening brace.
+
+p. 324:	Section 11.11 should begin "The icmp_error function" (not icmp_output).
+
+p. 324:	3rd line of Section 11.11: replace the comma after "datagram" with a
+	period, and change "is is" to "is".
+
+p. 342:	5th line of Section 12.4 should read "datagrams that pass through the
+	hardware filter" (add "that").
+
+p. 352:	Line 862: replace "no need to keep the mbuf" with "no need to
+	keep the structure".
+
+p. 353:	First line: "Discard mbuf if defaults are OK" should be "Discard
+	structure if defaults are OK".
+
+p. 356:	In Figure 12.25 replace the reference to "loioctl" with "leioctl".
+
+p. 405:	2nd line from bottom of page: "protcol" should be "protocol".
+
+p. 412:	In the description for lines 327-332 replace "and the new group is
+	stored in the lookup cache" with "and if the cache already contains
+	the new group, the cache is marked as valid."
+
+p. 417:	Delete one of the two consecutive commas on the first line of the
+	fourth paragraph.
+
+p. 430:	Figure 14.42: in the mbuf containing the tunnel options, the IP
+	header and tunnel options are placed at the end of this mbuf,
+	not at the beginning (line 672 on p. 431).
+
+p. 431:	4th line from the top should be "Figure 14.42 shows how tunnel_send
+	prepares a packet" (change 14.43 to 14.42).
+
+p. 437:	Figure 15.5 should be labeled 15.4.  The one text reference on this
+	page to Figure 15.5 (on the line above the figure) should be to
+	Figure 15.4.  The reference on this page to Figure 15.5 (4th line of
+	first paragraph of Section 15.3) should be to Figure 15.4 (see next
+	typo).
+
+p. 438:	Figure 15.4 should be labeled 15.5.  Text references on p. 437 to both
+	15.4 and 15.5 should be swapped.
+
+p. 438:	In the comment for so_options near the top of the page, change
+	"see Figure 15.5" to "see Figure 15.4".
+
+p. 440:	2nd line of 2nd paragraph describing lines 48-64: delete extra "is"
+	in "is is".
+
+p. 452:	Last line: "pointed to by bind's third argument" should be "pointed
+	to by bind's second argument".
+
+p. 456:	Second line of Section 15.10: the comma after "is" should be after
+	the next word "unavailable".
+
+p. 469:	Half way down page: PR_SHUTDOWN should be PRU_SHUTDOWN.
+
+p. 476:	In Figure 16.2, "sbmax" should be "sb_max".
+
+p. 480:	In Figure 16.8 the references to PR_SEND and PR_SENDOOB should be to
+	PRU_SEND and PRU_SENDOOB.
+
+p. 486:	In Figure 16.19 the caption for "uio_resid" should be "n0 + n1 + n2".
+
+p. 492:	The indentation of the shaded box following line 396 should be moved
+	to the left one tab stop, as it's executed after the "if" on line 343.
+
+p. 501:	In Figure 16.28 the references to PR_RECV and PR_RECVOOB should be to
+	PRU_RCVD and PRU_RCVOOB.
+
+p. 509:	Figure 16.36: the terms so_snd and so_rcv should be in the Courier
+	font, not CourierBold.
+
+p. 510:	Figure 16.37: the terms so_snd and so_rcv should be in the Courier
+	font, not CourierBold.
+
+p. 510:	In the description for lines 439-446, change the three sentences
+	beginning with "Either uio or mp0 is null" to the following:
+	If mp0 points to an mbuf pointer, soreceive transfers the
+	receive buffer data to an mbuf chain pointed to by *mp0.
+	In this case, the uio structure is used only for the count
+	in uio_resid.  If mp0 is null, soreceive copies the data
+	into buffers described by the uio structure.
+
+p. 520:	2nd to last line should start with "Figure 16.49", not "Figure 16.48".
+
+p. 525:	Header for code lines 419-438 should be "Setup timeout value"
+	(delete redundant "up").
+
+p. 528:	2nd paragraph describing lines 497-500: delete "allocated on the stack"
+	since the array is static.
+
+p. 529:	4th line from the bottom: "returns 0" should be "soo_select returns 0".
+
+p. 543:	Caption for Figure 17.8: "Bsosetopt" should be "sosetopt".
+
+p. 544:	Reword "So there is an error if" to be "So EDOM should be returned if"
+	(for added clarity).
+
+p. 544:	Before the description of lines 831-840 add the line "but see Exercise
+	17.3 for more discussion".
+
+p. 552:	Change last sentence of first paragraph from "It returns the FNONBLOCK
+	flag to its original setting" to "It clears the FNONBLOCK flag, but
+	should instead restore the flag to its original setting."
+
+p. 557:	Add Exercise 17.3: "There is a problem with the suggested code used
+	to test the timeval structure in Figure 17.9 since tv->tv_sec * hz
+	may cause an overflow.  Suggest a change to the code to solve this
+	problem."
+
+p. 565:	Caption for Figure 18.6: replace the reference to Figure 18.6 at the
+	end with "Figure 18.4".
+
+p. 581:	Last sentence of Section 18.6: change "and the two ifaddr structures
+	are each contained" to "and the second ifaddr structure is contained".
+
+p. 605:	2nd line of description for lines 105-115: "route is usable" should be
+	"route is not usable".
+
+p. 658:	One quarter of the way down, all the text beginning with "This
+	confusing piece of code", the three cases that follow, and the line
+	beginning with "Basically, if the process" can all be simplified to:
+
+		First, any bits to be initialized (rtm_inits) are unlocked.
+		Any bits that are both initialized (rtm_inits) and locked
+		(rtm_rmx.rmx_locks) are locked.
+
+p. 664:	First line describing lines 82-107: change "most previous" to
+	"most recently seen".
+
+p. 703:	2nd line of page: change "which we describe in the next section" to
+	"which we describe in Section 21.13".
+
+p. 725:	After the 4 cases, insert "In cases 2, 3, and 4 in_pcbbind calls
+	in_pcblookup".
+
+p. 825:	Caption for Figure 25.10 should begin "tcp_timers", not "tcp_slowtimo".
+
+p. 827:	Caption for Figure 25.13 should begin "tcp_timers", not "tcp_slowtimo".
+
+p. 829:	Caption for Figure 25.15 should begin "tcp_timers", not "tcp_slowtimo".
+
+p. 842:	Sentence above Figure 25.26 should be "The first half of the
+	retransmission timeout case is shown in Figure 25.26".
+
+p. 842:	Caption for Figure 25.26 should begin "tcp_timers", not "tcp_slowtimo".
+
+p. 845:	Caption for Figure 25.27 should begin "tcp_timers", not "tcp_slowtimo".
+
+p. 870:	One-third of the way down the page: "Scenario 5 in Figure 26.20" should
+	be "Scenario 5 in Figure 26.19".
+
+p. 906:	10 lines from bottom: change "(as shown in the left half of Figure
+	2.14)" to "(recall the left half of Figure 2.14)".
+
+p. 924:	11th line from bottom: "simultaneous open complete" should be
+	"passive open or simultaneous open complete".
+
+p. 933:	4th line of description of lines 340-346 refers to "opt", which should
+	be "optp".
+
+p. 954:	Two lines above Figure 28.24, remove the extraneous comma following
+	"Figure 28.24".
+
+p. 1007:Delete final sentence of Introduction, since the RFC 1122 requirements
+	are in Appendix C.
+
+p. 1055:Add a note after the descriptions for lines 70-75: "Lines 71 and 74
+	both contain the same bug: the test for equality should be a test
+	for inequality."
+
+p. 1068:Second paragraph: "speed normally gives way to clarity" should be
+	"clarity normally gives way to speed".
+
+p. 1068:Third line from bottom: "source ode" should be "source code".
+
+p. 1070:The "type" field in the answer to Exercise 3.5 should be in a smaller
+	point size to fit within its box.
+
+p. 1074:In the listed answer for 10.4, "average number fragments" should be
+	"average number of fragments".
+
+p. 1074:The answers for 10.4 and 10.5 are really for 10.5 and 10.6.
+
+p. 1112:13th line from top: "No:" should be "No." (replace colon with period).
+
+p. 1112:Halfway down the page concerning "TOS in the routing table entry":
+	change "in the next chapter" to "in chapter 21".
+
+p. 1127:The URL for [Jacobson 1988b] should be
+	ftp://ftp.ee.lbl.gov/papers/congavoid.ps.Z.
+
+p. 1135:The entry for "Auerbach, K." should also reference page 300.
+
+p. 1143:Delete the index entry for icmp_output.
+
+p. 1148:Add page 226 to the entry for IP_ALLOWBROADCAST.
+
+p. 1148:Add page 245 to the entry for ip_defttl.
+
+p. 1149:Add page 207 to the entry for ipforward_rt.
+
+p. 1149:Add page 245 to the entry for ipforwarding.
+
+p. 1150:Add page 245 to the entry for ipsendredirects.
+
+p. 1151:Add page 356 to the entry for leioctl.
+
+p. 1151:Delete the entry for loictl.
+
+p. 1151:Delete page 356 and add page 362 to the entry for loioctl.
+
+p. 1156:Delete the entries for PR_RECV, PR_RECVOOB, PR_SEND, PR_SENDOOB,
+	and PR_SHUTDOWN.
+
+p. 1157:Add page number 501 to the entries for PRU_RCVD and PRU_RCVOOB.
+
+p. 1157:Add page number 480 to the entries for PRU_SEND and PRU_SENDOOB.
+
+p. 1162:Add page 476 to the entry for sb_max.
+
+p. 1163:Delete the entry for sbmax.
+
+p. 1164:Add page 297 to the entry for Sklower, K.
+
+-----------------------------------------------------------------------------
+The following are Comments to the Reader, they are not typos to be fixed.
+
+p.   5: If you type in the example program, be aware that some systems
+	(notably SunOS 4) do not allow the 5th argument to recvfrom()
+	to be a null pointer and return EFAULT.  Notice that Net/3 code
+	has no problem with this (lines 511-528 of Figure 16.31).
+
+p. 111:	Code lines 183-184 present a race condition.  Since the priority
+	was just dropped it's possible that the packet was placed on the
+	queue, the hardware interrupted, the driver took the mbuf chain and
+	sent it and freed it, causing the m->m_flags to reference undefined
+	memory.  All that happens in this case, however, is that the counter
+	if_omcasts is off by one.
+
+p. 214:	Lines 155, 167, and 171 contain a bug: ip->ip_len should be cast to
+	a (u_short), otherwise IP packets larger than 32767 bytes are
+	incorrectly handled.  (Notice that IP input correctly reassembles
+	IP datagrams > 32767, this bug just prevents any one fragment from
+	being > 32767.)
+
+p. 261: There are reported bugs in the 4.4BSD networking code dealing with
+	the timestamp option.  I have not had time to follow them through in
+	detail, and given how infrequently this code is used, it probably
+	affects very few, if any, packets.  Here are the reported bugs:
+
+	Figure 9.23: ptr=4, ptr=8, etc. are all off by one, and should be
+	ptr=5, ptr=9, etc.
+
+	Figure 9.24: lines 679, 689-690, 702-703: these occurences of
+	"if (ptr + size > len)" should all be "if (ptr - 1 + size > len)".
+
+	Figure 9.24: line 677: "if (ipt->ipt_len < 5)" should be
+	"if (ipt->ipt_len < 5 || ipt->ipt_ptr < 5)".
+
+p. 284:	There is a bug in the reassembly code on page 284: the 2nd argument
+	to m_pullup() on line 281 should be "hlen" instead of
+	"sizeof (struct ip))", to account for any possible IP options.
+
+p. 390:	The code to calculate the checksum on line 245 is wrong: it calculates
+	the checksum using the entire IP header.  Lines 240-245 should be
+	replaced with
+
+		m->m_data += sizeof(struct ip);
+		m->m_len -= sizeof(struct ip);
+		igmp = mtod(m, struct igmp *);
+		igmp->igmp_type = IGMP_HOST_MEMBERSHIP_REPORT;
+		igmp->igmp_code = 0;
+		igmp->igmp_group = inm->inm_addr;
+		igmp->igmp_cksum = 0;
+		igmp->igmp_cksum = in_cksum(m, IGMP_MINLEN);
+		m->m_data -= sizeof(struct ip);
+		m->m_len += sizeof(struct ip);
+
+p. 413:	The call to splx(s) on line 325 should be removed.
+
+p. 484:	A benign bug is that the two >= on page 484, lines 322-323 should
+	be >.
+
+p. 502:	Same benign bug (lines 448-449) as on p. 484.
+
+p. 769:	The function ip_stripoptions that's referenced is not shown in the book.
+
+p. 770:	Lines 94, 95, and 99 contain a bug: in all three lines ip->ip_len must
+	be cast to (u_short).  Failure to do so prevents UDP from accepting an
+	IP datagram whose length exceeds 32767.
+
+p. 925:	The function ip_stripoptions that's referenced is not shown in the book.
+
+p. 927:	Line 208 contains a bug: the value on the right side of the assignment
+	must be cast to (u_short) or TCP is unable to accept an IP datagram
+	whose length exceeds 32767.
+
+p. 958:	Line 715 should be "iss = tp->snd_nxt + TCP_ISSINCR" (replace rcv_nxt
+	with snd_nxt).
+
+p. 1079:Answer to Exercise 18.2: BSD systems actually allocate memory in
+	chunks whose size is a power of 2.  So each routing table entry
+	really requires 256 bytes.  This takes the total to just over
+	5 megabytes.
+
+p. 1090:Answer to Exercise 29.5: While this solution does fix the observed
+	suboptimal behavior, it also appears to introduce a serious bug:
+	the retransmission of FINs during a simultaneous close no longer
+	works, which could cause connections to hang.
+
+p. 1122:The function ip_stripoptions that's referenced is not shown in the book.
+
+All readers should be made aware of the paper "Performance Problems in
+BSD4.4 TCP", which was made available after the publication of Volume 2.
+It is available from
+
+	ftp://ftp.cs.arizona.edu/xkernel/Papers/tcp_problems.ps
+
+Another paper has been made available that adds to the information provided
+in [Jacobson 1993] and [Partridge 1993]:
+
+	Jacobson, V., "Design Changes to the Kernel Network Architecture
+		for 4.4BSD," 4.4BSD Class, Berkeley, Calif., May 1992,
+		ftp://ftp.ee.lbl.gov/talks/vj-nkarch.ps.Z
